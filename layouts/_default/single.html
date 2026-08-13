@@ -1,0 +1,13 @@
+{{ define "main" }}
+<section class="fade-in">
+    <h1 class="section-heading">{{ .Title }}</h1>
+    
+    {{ if .Description }}
+    <p style="color: var(--color-text-secondary); font-size: 1.125rem; margin-bottom: 2rem; font-family: 'Space Grotesk', sans-serif;">{{ .Description }}</p>
+    {{ end }}
+    
+    <div>
+        {{ .Content }}
+    </div>
+</section>
+{{ end }}

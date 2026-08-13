@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div class="hero">
+    <div class="text-center">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">error.sh</span>
+            </div>
+            <div class="terminal-content font-mono">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$ </span>
+                    <span class="terminal-output">curl -v https://abrarkhalish.dev/missing-page</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="text-orange">HTTP/404 Not Found</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$ </span>
+                    <span class="terminal-output">echo $ERROR</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-highlight text-4xl font-bold">404</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="text-secondary">Page not found in this timeline</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-prompt">$ </span>
+                    <span class="terminal-output">cd /</span>
+                </div>
+                <div class="terminal-line mt-4">
+                    <a href="/" class="text-cyan hover:text-green transition-colors">
+                        → Return to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
