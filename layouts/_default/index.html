@@ -167,13 +167,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const terminalContent = document.getElementById('terminal-content');
     
     const lines = [
-        { type: 'command', text: '$ whoami' },
+        { type: 'command', text: 'whoami' },
         { type: 'output', text: 'Abrar Khalish Kamarulzaman' },
-        { type: 'command', text: '$ cat role.txt' },
+        { type: 'command', text: 'cat role.txt' },
         { type: 'highlight', text: 'Senior Cloud Engineer | DevOps Proponent' },
-        { type: 'command', text: '$ kubectl get pods --all-namespaces | grep status' },
+        { type: 'command', text: 'kubectl get pods --all-namespaces | grep status' },
         { type: 'badge', text: 'CI/CD Pipeline: Passing' },
-        { type: 'command', text: '$ uptime' },
+        { type: 'command', text: 'uptime' },
         { type: 'output', text: '10+ years in cloud & infrastructure' }
     ];
     
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
             lineDiv.appendChild(prompt);
             
             currentSpan = document.createElement('span');
-            currentSpan.className = 'terminal-output';
+            currentSpan.className = 'terminal-command';
             lineDiv.appendChild(currentSpan);
         } else if (type === 'output') {
             currentSpan = document.createElement('span');

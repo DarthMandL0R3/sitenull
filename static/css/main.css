@@ -6,6 +6,7 @@
   --color-bg-card: #161616;
   --color-accent: #22c55e;
   --color-accent-hover: #16a34a;
+  --color-command: #FCD0A1;
   --color-text-primary: #ffffff;
   --color-text-secondary: #a3a3a3;
   --color-border: #262626;
@@ -603,7 +604,7 @@ a, button, [role="button"], .card, .tag, .social-link, .project-card, .contact-c
 }
 
 .terminal-command {
-  color: var(--color-text-primary);
+  color: var(--color-command);
   font-family: var(--type-mono);
   font-size: 0.875rem;
 }
