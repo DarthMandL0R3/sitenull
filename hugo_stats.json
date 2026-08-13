@@ -3,7 +3,6 @@
     "tags": [
       "a",
       "body",
-      "button",
       "div",
       "footer",
       "h1",
@@ -40,7 +39,6 @@
       "border-border",
       "border-t",
       "btn",
-      "btn-primary",
       "btn-secondary",
       "card",
       "cert-card",
@@ -61,7 +59,6 @@
       "experience-meta",
       "fade-in",
       "flex",
-      "flex-col",
       "flex-wrap",
       "font-bold",
       "font-mono",
@@ -76,13 +73,6 @@
       "h-16",
       "h-6",
       "hero",
-      "hero-content",
-      "hero-cta",
-      "hero-eyebrow",
-      "hero-subtitle",
-      "hero-title",
-      "hidden",
-      "highlight",
       "hover:text-cyan",
       "hover:text-green",
       "inline-flex",
@@ -104,7 +94,6 @@
       "nav-link",
       "nav-links",
       "nav-logo",
-      "nav-toggle",
       "page-fade-in",
       "proficiency-bar",
       "proficiency-expert",
@@ -145,6 +134,9 @@
       "terminal-line",
       "terminal-output",
       "terminal-prompt",
+      "terminal-status-bar",
+      "terminal-status-dot",
+      "terminal-status-item",
       "terminal-title",
       "terminal-window",
       "text-4xl",
@@ -168,9 +160,8 @@
       "certs-terminal",
       "contact-terminal",
       "github-terminal",
-      "nav-menu",
-      "nav-toggle",
-      "skills-terminal"
+      "skills-terminal",
+      "terminal-content"
     ]
   }
 }

@@ -18,7 +18,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 </head>
 <body class="bg-grid">
-    {{ if not .IsHome }}{{ partial "nav.html" . }}{{ end }}
+    {{ partial "nav.html" . }}
     
     <main class="page-fade-in">
         {{ block "main" . }}{{ end }}
@@ -29,15 +29,6 @@
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-            
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('hidden');
-                });
-            }
-            
             // Scroll-triggered fade-in animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {

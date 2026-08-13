@@ -1,21 +1,33 @@
 {{ define "main" }}
 <!-- Hero Section -->
 <section class="hero">
-    <div class="hero-content page-fade-in">
-        <p class="hero-eyebrow">Senior Cloud Engineer</p>
-        <h1 class="hero-title">
-            Building the <span class="highlight">future</span> of cloud infrastructure
-        </h1>
-        <p class="hero-subtitle">
-            Experienced IT professional with 10+ years in server management, containerization, virtualization, and automation. Passionate about building scalable, reliable systems.
-        </p>
-        <div class="hero-cta">
-            <a href="/projects/" class="btn btn-primary">View Projects</a>
-            <a href="/contact/" class="btn btn-secondary">Get in Touch</a>
+    <div class="text-center" style="z-index: 10; width: 100%; max-width: 700px; margin: 0 auto; padding: 0 1rem;">
+        <!-- Terminal Window -->
+        <div class="card terminal-window" style="text-align: left;">
+            <div class="terminal-header">
+                <div class="terminal-dot red"></div>
+                <div class="terminal-dot yellow"></div>
+                <div class="terminal-dot green"></div>
+                <span class="terminal-title">terminal — bash</span>
+            </div>
+            <div class="terminal-content" id="terminal-content">
+                <!-- Lines will be typed by JS -->
+            </div>
+            <div class="terminal-status-bar">
+                <div class="terminal-status-item">
+                    <span class="terminal-status-dot"></span>
+                    <span>online</span>
+                </div>
+                <div class="terminal-status-item">
+                    <span>bash</span>
+                    <span>·</span>
+                    <span>utf-8</span>
+                </div>
+            </div>
         </div>
         
         <!-- Social Links -->
-        <div class="social-links" style="margin-top: 3rem;">
+        <div class="social-links" style="margin-top: 2rem;">
             <a href="https://github.com/DarthMandL0R3" target="_blank" rel="noopener noreferrer" 
                class="social-link">
                 <svg fill="currentColor" viewBox="0 0 24 24">
@@ -148,4 +160,101 @@
     </div>
 </section>
 
+<!-- Terminal Typing Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const terminalContent = document.getElementById('terminal-content');
+    
+    const lines = [
+        { type: 'command', text: '$ whoami' },
+        { type: 'output', text: 'Abrar Khalish Kamarulzaman' },
+        { type: 'command', text: '$ cat role.txt' },
+        { type: 'highlight', text: 'Senior Cloud Engineer | DevOps Proponent' },
+        { type: 'command', text: '$ kubectl get pods --all-namespaces | grep status' },
+        { type: 'badge', text: 'CI/CD Pipeline: Passing' },
+        { type: 'command', text: '$ uptime' },
+        { type: 'output', text: '10+ years in cloud & infrastructure' }
+    ];
+    
+    let lineIndex = 0;
+    let charIndex = 0;
+    let currentSpan = null;
+    
+    function createLine(type) {
+        const lineDiv = document.createElement('div');
+        lineDiv.className = 'terminal-line';
+        
+        if (type === 'command') {
+            const prompt = document.createElement('span');
+            prompt.className = 'terminal-prompt';
+            prompt.textContent = '$ ';
+            lineDiv.appendChild(prompt);
+            
+            currentSpan = document.createElement('span');
+            currentSpan.className = 'terminal-output';
+            lineDiv.appendChild(currentSpan);
+        } else if (type === 'output') {
+            currentSpan = document.createElement('span');
+            currentSpan.className = 'terminal-output';
+            lineDiv.appendChild(currentSpan);
+        } else if (type === 'highlight') {
+            currentSpan = document.createElement('span');
+            currentSpan.className = 'terminal-highlight';
+            lineDiv.appendChild(currentSpan);
+        } else if (type === 'badge') {
+            const badge = document.createElement('span');
+            badge.className = 'status-badge status-online';
+            badge.innerHTML = '<span class="status-dot"></span> ' + lines[lineIndex].text;
+            lineDiv.appendChild(badge);
+            currentSpan = null;
+        }
+        
+        return lineDiv;
+    }
+    
+    function typeLine() {
+        if (lineIndex >= lines.length) {
+            setTimeout(() => {
+                terminalContent.innerHTML = '';
+                lineIndex = 0;
+                typeLine();
+            }, 5000);
+            return;
+        }
+        
+        const line = lines[lineIndex];
+        
+        if (line.type === 'badge') {
+            const lineDiv = createLine('badge');
+            terminalContent.appendChild(lineDiv);
+            lineIndex++;
+            setTimeout(typeLine, 800);
+            return;
+        }
+        
+        const lineDiv = createLine(line.type);
+        terminalContent.appendChild(lineDiv);
+        
+        charIndex = 0;
+        const text = line.type === 'command' ? line.text.replace(/^\$ /, '') : line.text;
+        
+        function typeChar() {
+            if (charIndex < text.length) {
+                if (currentSpan) {
+                    currentSpan.textContent += text[charIndex];
+                }
+                charIndex++;
+                setTimeout(typeChar, 30 + Math.random() * 30);
+            } else {
+                lineIndex++;
+                setTimeout(typeLine, 400);
+            }
+        }
+        
+        typeChar();
+    }
+    
+    setTimeout(typeLine, 1000);
+});
+</script>
 {{ end }}
