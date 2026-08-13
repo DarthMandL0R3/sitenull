@@ -4,7 +4,6 @@ description: "Professional cloud certifications and credentials"
 weight: 40
 ---
 
-# Certifications
 <div class="terminal-header">
     <span class="terminal-dot red"></span>
     <span class="terminal-dot yellow"></span>
