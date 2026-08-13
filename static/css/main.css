@@ -602,6 +602,12 @@ a, button, [role="button"], .card, .tag, .social-link, .project-card, .contact-c
   font-family: var(--type-mono);
 }
 
+.terminal-command {
+  color: var(--color-text-primary);
+  font-family: var(--type-mono);
+  font-size: 0.875rem;
+}
+
 .terminal-output {
   color: var(--color-text-primary);
   font-family: var(--type-mono);

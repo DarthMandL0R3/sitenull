@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (type === 'command') {
             const prompt = document.createElement('span');
             prompt.className = 'terminal-prompt';
-            prompt.textContent = '';
+            prompt.textContent = '$ ';
             div.appendChild(prompt);
             currentSpan = document.createElement('span');
             currentSpan.className = 'terminal-command';
