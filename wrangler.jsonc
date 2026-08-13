@@ -1,0 +1,8 @@
+{
+  // Abrar Khalish portfolio — Cloudflare Pages project
+  // Used for Direct Upload deploys (npx wrangler pages deploy)
+  // Ignored when deploying via the Cloudflare dashboard Git integration
+  "name": "abrarkhalish",
+  "compatibility_date": "2025-01-29",
+  "pages_build_output_dir": "public"
+}
