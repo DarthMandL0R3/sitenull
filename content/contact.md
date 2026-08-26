@@ -17,7 +17,7 @@ weight: 60
         Feel free to reach out through any of the channels below.
     </p>
     <div class="contact-grid mb-8">
-        <a href="mailto:contact@abrarkhalish.dev" class="card contact-card">
+        <a href="mailto:contact@abrarkhalish.com" class="card contact-card">
             <div class="flex items-center gap-4">
                 <div class="contact-icon">
                     <svg class="w-6 h-6 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -26,7 +26,7 @@ weight: 60
                 </div>
                 <div>
                     <h3 class="contact-title">Email</h3>
-                    <p class="contact-value">contact@abrarkhalish.dev</p>
+                    <p class="contact-value">contact@abrarkhalish.com</p>
                 </div>
             </div>
         </a>

@@ -92,8 +92,8 @@ Google Cloud
 <span class="text-primary">Bicep</span>
 </div>
 <div class="flex items-center gap-2">
-<img src="/icons/pulumi.svg" alt="Pulumi" width="16" height="16" style="filter: brightness(0) invert(1);">
-<span class="text-primary">Pulumi</span>
+<img src="/icons/cloudformation.svg" alt="CloudFormation" width="16" height="16" style="filter: brightness(0) invert(1);">
+<span class="text-primary">CloudFormation</span>
 </div>
 </div>
 </div>
