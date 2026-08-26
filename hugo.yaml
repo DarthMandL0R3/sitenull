@@ -1,7 +1,6 @@
 baseURL: "https://abrarkhalish.com/"
 locale: "en-us"
 title: "Abrar Khalish | Cloud DevOps Engineer"
-theme: ""
 
 # Build settings
 build:
