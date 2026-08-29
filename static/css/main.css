@@ -172,7 +172,14 @@ nav {
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -572,7 +579,7 @@ a, button, [role="button"], .card, .tag, .social-link, .project-card, .contact-c
 }
 
 .terminal-content {
-  min-height: 11rem;
+  min-height: 14rem;
   text-align: left;
   padding: 1rem;
 }
@@ -724,6 +731,11 @@ a, button, [role="button"], .card, .tag, .social-link, .project-card, .contact-c
 @media (max-width: 768px) {
   .project-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
   }
 }
 

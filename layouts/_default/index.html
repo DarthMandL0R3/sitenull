@@ -51,7 +51,7 @@
 </section>
 
 <!-- Quick Stats -->
-<section class="fade-in">
+<section>
     <h2 class="section-heading">// Quick Stats</h2>
     <div class="stats-grid">
         <div class="stat-card">
@@ -74,7 +74,7 @@
 </section>
 
 <!-- About Preview -->
-<section class="fade-in">
+<section>
     <h2 class="section-heading">// About Me</h2>
     <div class="card about-card">
         <div class="about-layout">
@@ -110,7 +110,7 @@
 </section>
 
 <!-- Featured Projects Preview -->
-<section class="fade-in">
+<section>
     <h2 class="section-heading">// Featured Projects</h2>
     <div class="project-grid">
         <a href="/projects/" class="card project-card">
@@ -256,6 +256,43 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     setTimeout(typeLine, 1000);
+    
+    // Fallback: render all lines instantly after 3s if animation hasn't completed
+    setTimeout(function() {
+        if (lineIndex < lines.length) {
+            terminalContent.innerHTML = '';
+            lines.forEach(function(line) {
+                var lineDiv = document.createElement('div');
+                lineDiv.className = 'terminal-line';
+                if (line.type === 'command') {
+                    var prompt = document.createElement('span');
+                    prompt.className = 'terminal-prompt';
+                    prompt.textContent = '$ ';
+                    lineDiv.appendChild(prompt);
+                    var cmd = document.createElement('span');
+                    cmd.className = 'terminal-command';
+                    cmd.textContent = line.text;
+                    lineDiv.appendChild(cmd);
+                } else if (line.type === 'output') {
+                    var out = document.createElement('span');
+                    out.className = 'terminal-output';
+                    out.textContent = line.text;
+                    lineDiv.appendChild(out);
+                } else if (line.type === 'highlight') {
+                    var hl = document.createElement('span');
+                    hl.className = 'terminal-highlight';
+                    hl.textContent = line.text;
+                    lineDiv.appendChild(hl);
+                } else if (line.type === 'badge') {
+                    var badge = document.createElement('span');
+                    badge.className = 'status-badge status-online';
+                    badge.innerHTML = '<span class="status-dot"></span> ' + line.text;
+                    lineDiv.appendChild(badge);
+                }
+                terminalContent.appendChild(lineDiv);
+            });
+        }
+    }, 3000);
 });
 </script>
 {{ end }}

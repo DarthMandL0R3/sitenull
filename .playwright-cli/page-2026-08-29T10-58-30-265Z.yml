@@ -1,0 +1,204 @@
+- generic [active] [ref=f1e1]:
+  - navigation [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - link "<AKK/>" [ref=f1e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f1e5]:
+        - link "Home" [ref=f1e6] [cursor=pointer]:
+          - /url: /
+        - link "Tech Stack" [ref=f1e7] [cursor=pointer]:
+          - /url: /tech-stack/
+        - link "Projects" [ref=f1e8] [cursor=pointer]:
+          - /url: /projects/
+        - link "Certifications" [ref=f1e9] [cursor=pointer]:
+          - /url: /certifications/
+        - link "Experience" [ref=f1e10] [cursor=pointer]:
+          - /url: /experience/
+        - link "Contact" [ref=f1e11] [cursor=pointer]:
+          - /url: /contact/
+  - main [ref=f1e12]:
+    - generic [ref=f1e13]:
+      - heading "Tech Stack" [level=1] [ref=f1e14]
+      - paragraph [ref=f1e15]: Technical skills and proficiencies
+      - generic [ref=f1e16]:
+        - generic [ref=f1e17]: ~/skills --list --verbose
+        - generic [ref=f1e22]:
+          - generic [ref=f1e23] [cursor=pointer]:
+            - heading "// Cloud Platforms" [level=3] [ref=f1e24]
+            - generic [ref=f1e25]:
+              - generic [ref=f1e26]:
+                - generic [ref=f1e27]:
+                  - generic [ref=f1e28]:
+                    - img "Azure" [ref=f1e29]
+                    - text: Microsoft Azure
+                  - generic [ref=f1e30]: Expert
+                - paragraph [ref=f1e33]: AKS, DevOps, Landing Zones, Policy, Monitor
+              - generic [ref=f1e34]:
+                - generic [ref=f1e35]:
+                  - generic [ref=f1e36]:
+                    - img "AWS" [ref=f1e37]
+                    - text: AWS
+                  - generic [ref=f1e38]: Proficient
+                - paragraph [ref=f1e41]: EC2, EKS, Lambda, S3, CloudFormation
+              - generic [ref=f1e42]:
+                - generic [ref=f1e43]:
+                  - generic [ref=f1e44]:
+                    - img "GCP" [ref=f1e45]
+                    - text: Google Cloud
+                  - generic [ref=f1e46]: Familiar
+                - paragraph [ref=f1e49]: GKE, Cloud Run, BigQuery
+          - generic [ref=f1e50] [cursor=pointer]:
+            - heading "// Containers" [level=3] [ref=f1e51]
+            - generic [ref=f1e52]:
+              - generic [ref=f1e53]:
+                - img "Kubernetes" [ref=f1e54]
+                - generic [ref=f1e55]: Kubernetes
+              - generic [ref=f1e56]:
+                - img "Docker" [ref=f1e57]
+                - generic [ref=f1e58]: Docker
+              - generic [ref=f1e59]:
+                - img "Helm" [ref=f1e60]
+                - generic [ref=f1e61]: Helm
+              - generic [ref=f1e62]:
+                - img "Istio" [ref=f1e63]
+                - generic [ref=f1e64]: Istio
+          - generic [ref=f1e65] [cursor=pointer]:
+            - heading "// IaC" [level=3] [ref=f1e66]
+            - generic [ref=f1e67]:
+              - generic [ref=f1e68]:
+                - img "Terraform" [ref=f1e69]
+                - generic [ref=f1e70]: Terraform
+              - generic [ref=f1e71]:
+                - img "Ansible" [ref=f1e72]
+                - generic [ref=f1e73]: Ansible
+              - generic [ref=f1e74]:
+                - img "Bicep" [ref=f1e75]
+                - generic [ref=f1e76]: Bicep
+              - generic [ref=f1e77]:
+                - img "CloudFormation" [ref=f1e78]
+                - generic [ref=f1e79]: CloudFormation
+          - generic [ref=f1e80] [cursor=pointer]:
+            - heading "// CI/CD" [level=3] [ref=f1e81]
+            - generic [ref=f1e82]:
+              - generic [ref=f1e83]:
+                - img "GitHub" [ref=f1e84]
+                - generic [ref=f1e85]: GitHub Actions
+              - generic [ref=f1e86]:
+                - img "Jenkins" [ref=f1e87]
+                - generic [ref=f1e88]: Jenkins
+              - generic [ref=f1e89]:
+                - img "Azure DevOps" [ref=f1e90]
+                - generic [ref=f1e91]: Azure DevOps
+              - generic [ref=f1e92]:
+                - img "ArgoCD" [ref=f1e93]
+                - generic [ref=f1e94]: ArgoCD
+          - generic [ref=f1e95] [cursor=pointer]:
+            - heading "// Monitoring" [level=3] [ref=f1e96]
+            - generic [ref=f1e97]:
+              - generic [ref=f1e98]:
+                - img "Prometheus" [ref=f1e99]
+                - generic [ref=f1e100]: Prometheus
+              - generic [ref=f1e101]:
+                - img "Grafana" [ref=f1e102]
+                - generic [ref=f1e103]: Grafana
+              - generic [ref=f1e104]:
+                - img "Zabbix" [ref=f1e105]
+                - generic [ref=f1e106]: Zabbix
+              - generic [ref=f1e107]:
+                - img "Datadog" [ref=f1e108]
+                - generic [ref=f1e109]: Datadog
+          - generic [ref=f1e110] [cursor=pointer]:
+            - heading "// Scripting" [level=3] [ref=f1e111]
+            - generic [ref=f1e112]:
+              - generic [ref=f1e113]:
+                - img "Python" [ref=f1e114]
+                - generic [ref=f1e115]: Python
+              - generic [ref=f1e116]:
+                - img "Bash" [ref=f1e117]
+                - generic [ref=f1e118]: Bash
+              - generic [ref=f1e119]:
+                - img "PowerShell" [ref=f1e120]
+                - generic [ref=f1e121]: PowerShell
+              - generic [ref=f1e122]:
+                - img "YAML/JSON" [ref=f1e123]
+                - generic [ref=f1e124]: YAML/JSON
+          - generic [ref=f1e125] [cursor=pointer]:
+            - heading "// Databases" [level=3] [ref=f1e126]
+            - generic [ref=f1e127]:
+              - generic [ref=f1e128]:
+                - img "PostgreSQL" [ref=f1e129]
+                - generic [ref=f1e130]: PostgreSQL
+              - generic [ref=f1e131]:
+                - img "MySQL" [ref=f1e132]
+                - generic [ref=f1e133]: MySQL
+              - generic [ref=f1e134]:
+                - img "MongoDB" [ref=f1e135]
+                - generic [ref=f1e136]: MongoDB
+              - generic [ref=f1e137]:
+                - img "Redis" [ref=f1e138]
+                - generic [ref=f1e139]: Redis
+          - generic [ref=f1e140] [cursor=pointer]:
+            - heading "// Operating Systems" [level=3] [ref=f1e141]
+            - generic [ref=f1e142]:
+              - generic [ref=f1e143]:
+                - img "Linux" [ref=f1e144]
+                - text: Linux
+              - generic [ref=f1e145]:
+                - img "Ubuntu" [ref=f1e146]
+                - text: Ubuntu
+              - generic [ref=f1e147]:
+                - img "CentOS" [ref=f1e148]
+                - text: CentOS
+              - generic [ref=f1e149]:
+                - img "Windows Server" [ref=f1e150]
+                - text: Windows Server
+              - generic [ref=f1e151]:
+                - img "RHEL" [ref=f1e152]
+                - text: RHEL
+              - generic [ref=f1e153]:
+                - img "Debian" [ref=f1e154]
+                - text: Debian
+              - generic [ref=f1e155]:
+                - img "Alpine" [ref=f1e156]
+                - text: Alpine
+          - generic [ref=f1e157] [cursor=pointer]:
+            - heading "// Networking" [level=3] [ref=f1e158]
+            - generic [ref=f1e159]:
+              - generic [ref=f1e160]:
+                - img "TCP/IP" [ref=f1e161]
+                - generic [ref=f1e162]: TCP/IP
+              - generic [ref=f1e163]:
+                - img "DNS" [ref=f1e164]
+                - generic [ref=f1e165]: DNS
+              - generic [ref=f1e166]:
+                - img "Load Balancing" [ref=f1e167]
+                - generic [ref=f1e168]: Load Balancing
+              - generic [ref=f1e169]:
+                - img "Firewall" [ref=f1e170]
+                - generic [ref=f1e171]: Firewall
+          - generic [ref=f1e172] [cursor=pointer]:
+            - heading "// Security" [level=3] [ref=f1e173]
+            - generic [ref=f1e174]:
+              - generic [ref=f1e175]:
+                - img "IAM" [ref=f1e176]
+                - generic [ref=f1e177]: IAM
+              - generic [ref=f1e178]:
+                - img "RBAC" [ref=f1e179]
+                - generic [ref=f1e180]: RBAC
+              - generic [ref=f1e181]:
+                - img "SSL/TLS" [ref=f1e182]
+                - generic [ref=f1e183]: SSL/TLS
+              - generic [ref=f1e184]:
+                - img "Vault" [ref=f1e185]
+                - generic [ref=f1e186]: Vault
+        - generic [ref=f1e187] [cursor=pointer]: skills --summary
+  - contentinfo [ref=f1e193]:
+    - generic [ref=f1e194]:
+      - paragraph [ref=f1e195]: © 2026 Abrar Khalish Kamarulzaman
+      - generic [ref=f1e196]:
+        - link [ref=f1e197] [cursor=pointer]:
+          - /url: https://github.com/DarthMandL0R3
+        - link [ref=f1e200] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/abrarkhalish/
+        - link [ref=f1e203] [cursor=pointer]:
+          - /url: mailto:contact@abrarkhalish.com
