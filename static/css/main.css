@@ -1232,3 +1232,15 @@ a:disabled, button:disabled {
   pointer-events: none;
   cursor: not-allowed;
 }
+
+/* Mobile terminal fixes */
+@media (max-width: 640px) {
+  .terminal-window {
+    aspect-ratio: auto;
+    min-height: 18rem;
+  }
+  
+  .terminal-content {
+    min-height: 12rem;
+  }
+}

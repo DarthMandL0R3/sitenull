@@ -1,0 +1,213 @@
+- generic [active] [ref=f1e1] [box=0,0,393,3655]:
+  - navigation [ref=f1e2] [box=0,0,393,83]:
+    - generic [ref=f1e3] [box=0,16,393,50]:
+      - link "<AKK/>" [ref=f1e4] [cursor=pointer] [box=32,29,56,24]:
+        - /url: /
+      - generic [ref=f1e5] [box=88,16,273,50]:
+        - link "Home" [ref=f1e6] [cursor=pointer] [box=88,27,37,29]:
+          - /url: /
+        - link "Tech Stack" [ref=f1e7] [cursor=pointer] [box=144,16,37,50]:
+          - /url: /tech-stack/
+        - link "Projects" [ref=f1e8] [cursor=pointer] [box=202,27,53,29]:
+          - /url: /projects/
+        - link "Certifications" [ref=f1e9] [cursor=pointer] [box=275,27,88,29]:
+          - /url: /certifications/
+        - link "Experience" [ref=f1e10] [cursor=pointer] [box=383,27,72,29]:
+          - /url: /experience/
+        - link "Contact" [ref=f1e11] [cursor=pointer] [box=475,27,53,29]:
+          - /url: /contact/
+  - main [ref=f1e12] [box=0,83,393,3351]:
+    - generic [ref=f1e13] [box=16,115,361,3287]:
+      - heading "Tech Stack" [level=1] [ref=f1e14] [box=48,171,297,28]
+      - paragraph [ref=f1e15] [box=48,231,297,27]: Technical skills and proficiencies
+      - generic [ref=f1e16] [box=48,290,297,3056]:
+        - generic [ref=f1e17] [box=48,290,297,43]: ~/skills --list --verbose
+        - generic [ref=f1e22] [box=48,333,297,2630]:
+          - generic [ref=f1e23] [cursor=pointer] [box=48,333,297,427]:
+            - heading "// Cloud Platforms" [level=3] [ref=f1e24] [box=69,372,255,27]
+            - generic [ref=f1e25] [box=69,415,255,308]:
+              - generic [ref=f1e26] [box=69,415,255,100]:
+                - generic [ref=f1e27] [box=69,415,255,24]:
+                  - generic [ref=f1e28] [box=69,415,146,24]:
+                    - img "Azure" [ref=f1e29] [box=69,417,20,20]
+                    - text: Microsoft Azure
+                  - generic [ref=f1e30] [box=276,417,48,21]: Expert
+                - paragraph [ref=f1e33] [box=69,467,255,48]: AKS, DevOps, Landing Zones, Policy, Monitor
+              - generic [ref=f1e34] [box=69,531,255,100]:
+                - generic [ref=f1e35] [box=69,531,255,24]:
+                  - generic [ref=f1e36] [box=69,531,61,24]:
+                    - img "AWS" [ref=f1e37] [box=69,533,20,20]
+                    - text: AWS
+                  - generic [ref=f1e38] [box=243,533,81,21]: Proficient
+                - paragraph [ref=f1e41] [box=69,583,255,48]: EC2, EKS, Lambda, S3, CloudFormation
+              - generic [ref=f1e42] [box=69,647,255,76]:
+                - generic [ref=f1e43] [box=69,647,255,24]:
+                  - generic [ref=f1e44] [box=69,647,126,24]:
+                    - img "GCP" [ref=f1e45] [box=69,649,20,20]
+                    - text: Google Cloud
+                  - generic [ref=f1e46] [box=259,649,65,21]: Familiar
+                - paragraph [ref=f1e49] [box=69,699,255,24]: GKE, Cloud Run, BigQuery
+          - generic [ref=f1e50] [cursor=pointer] [box=48,776,297,231]:
+            - heading "// Containers" [level=3] [ref=f1e51] [box=69,815,255,27]
+            - generic [ref=f1e52] [box=69,854,255,132]:
+              - generic [ref=f1e53] [box=69,854,255,24]:
+                - img "Kubernetes" [ref=f1e54] [box=69,858,16,16]
+                - generic [ref=f1e55] [box=93,854,86,24]: Kubernetes
+              - generic [ref=f1e56] [box=69,890,255,24]:
+                - img "Docker" [ref=f1e57] [box=69,894,16,16]
+                - generic [ref=f1e58] [box=93,890,52,24]: Docker
+              - generic [ref=f1e59] [box=69,926,255,24]:
+                - img "Helm" [ref=f1e60] [box=69,930,16,16]
+                - generic [ref=f1e61] [box=93,926,36,24]: Helm
+              - generic [ref=f1e62] [box=69,962,255,24]:
+                - img "Istio" [ref=f1e63] [box=69,966,16,16]
+                - generic [ref=f1e64] [box=93,962,32,24]: Istio
+          - generic [ref=f1e65] [cursor=pointer] [box=48,1023,297,231]:
+            - heading "// IaC" [level=3] [ref=f1e66] [box=69,1062,255,27]
+            - generic [ref=f1e67] [box=69,1101,255,132]:
+              - generic [ref=f1e68] [box=69,1101,255,24]:
+                - img "Terraform" [ref=f1e69] [box=69,1105,16,16]
+                - generic [ref=f1e70] [box=93,1101,71,24]: Terraform
+              - generic [ref=f1e71] [box=69,1137,255,24]:
+                - img "Ansible" [ref=f1e72] [box=69,1141,16,16]
+                - generic [ref=f1e73] [box=93,1137,54,24]: Ansible
+              - generic [ref=f1e74] [box=69,1173,255,24]:
+                - img "Bicep" [ref=f1e75] [box=69,1177,16,16]
+                - generic [ref=f1e76] [box=93,1173,42,24]: Bicep
+              - generic [ref=f1e77] [box=69,1209,255,24]:
+                - img "CloudFormation" [ref=f1e78] [box=69,1213,16,16]
+                - generic [ref=f1e79] [box=93,1209,118,24]: CloudFormation
+          - generic [ref=f1e80] [cursor=pointer] [box=48,1270,297,231]:
+            - heading "// CI/CD" [level=3] [ref=f1e81] [box=69,1309,255,27]
+            - generic [ref=f1e82] [box=69,1348,255,132]:
+              - generic [ref=f1e83] [box=69,1348,255,24]:
+                - img "GitHub" [ref=f1e84] [box=69,1352,16,16]
+                - generic [ref=f1e85] [box=93,1348,111,24]: GitHub Actions
+              - generic [ref=f1e86] [box=69,1384,255,24]:
+                - img "Jenkins" [ref=f1e87] [box=69,1388,16,16]
+                - generic [ref=f1e88] [box=93,1384,57,24]: Jenkins
+              - generic [ref=f1e89] [box=69,1420,255,24]:
+                - img "Azure DevOps" [ref=f1e90] [box=69,1424,16,16]
+                - generic [ref=f1e91] [box=93,1420,102,24]: Azure DevOps
+              - generic [ref=f1e92] [box=69,1456,255,24]:
+                - img "ArgoCD" [ref=f1e93] [box=69,1460,16,16]
+                - generic [ref=f1e94] [box=93,1456,55,24]: ArgoCD
+          - generic [ref=f1e95] [cursor=pointer] [box=48,1517,297,231]:
+            - heading "// Monitoring" [level=3] [ref=f1e96] [box=69,1556,255,27]
+            - generic [ref=f1e97] [box=69,1595,255,132]:
+              - generic [ref=f1e98] [box=69,1595,255,24]:
+                - img "Prometheus" [ref=f1e99] [box=69,1599,16,16]
+                - generic [ref=f1e100] [box=93,1595,90,24]: Prometheus
+              - generic [ref=f1e101] [box=69,1631,255,24]:
+                - img "Grafana" [ref=f1e102] [box=69,1635,16,16]
+                - generic [ref=f1e103] [box=93,1631,58,24]: Grafana
+              - generic [ref=f1e104] [box=69,1667,255,24]:
+                - img "Zabbix" [ref=f1e105] [box=69,1671,16,16]
+                - generic [ref=f1e106] [box=93,1667,51,24]: Zabbix
+              - generic [ref=f1e107] [box=69,1703,255,24]:
+                - img "Datadog" [ref=f1e108] [box=69,1707,16,16]
+                - generic [ref=f1e109] [box=93,1703,64,24]: Datadog
+          - generic [ref=f1e110] [cursor=pointer] [box=48,1764,297,231]:
+            - heading "// Scripting" [level=3] [ref=f1e111] [box=69,1803,255,27]
+            - generic [ref=f1e112] [box=69,1842,255,132]:
+              - generic [ref=f1e113] [box=69,1842,255,24]:
+                - img "Python" [ref=f1e114] [box=69,1846,16,16]
+                - generic [ref=f1e115] [box=93,1842,54,24]: Python
+              - generic [ref=f1e116] [box=69,1878,255,24]:
+                - img "Bash" [ref=f1e117] [box=69,1882,16,16]
+                - generic [ref=f1e118] [box=93,1878,37,24]: Bash
+              - generic [ref=f1e119] [box=69,1914,255,24]:
+                - img "PowerShell" [ref=f1e120] [box=69,1918,16,16]
+                - generic [ref=f1e121] [box=93,1914,81,24]: PowerShell
+              - generic [ref=f1e122] [box=69,1950,255,24]:
+                - img "YAML/JSON" [ref=f1e123] [box=69,1954,16,16]
+                - generic [ref=f1e124] [box=93,1950,84,24]: YAML/JSON
+          - generic [ref=f1e125] [cursor=pointer] [box=48,2011,297,231]:
+            - heading "// Databases" [level=3] [ref=f1e126] [box=69,2050,255,27]
+            - generic [ref=f1e127] [box=69,2089,255,132]:
+              - generic [ref=f1e128] [box=69,2089,255,24]:
+                - img "PostgreSQL" [ref=f1e129] [box=69,2093,16,16]
+                - generic [ref=f1e130] [box=93,2089,86,24]: PostgreSQL
+              - generic [ref=f1e131] [box=69,2125,255,24]:
+                - img "MySQL" [ref=f1e132] [box=69,2129,16,16]
+                - generic [ref=f1e133] [box=93,2125,51,24]: MySQL
+              - generic [ref=f1e134] [box=69,2161,255,24]:
+                - img "MongoDB" [ref=f1e135] [box=69,2165,16,16]
+                - generic [ref=f1e136] [box=93,2161,72,24]: MongoDB
+              - generic [ref=f1e137] [box=69,2197,255,24]:
+                - img "Redis" [ref=f1e138] [box=69,2201,16,16]
+                - generic [ref=f1e139] [box=93,2197,41,24]: Redis
+          - generic [ref=f1e140] [cursor=pointer] [box=48,2258,297,211]:
+            - heading "// Operating Systems" [level=3] [ref=f1e141] [box=69,2297,255,27]
+            - generic [ref=f1e142] [box=69,2336,255,112]:
+              - generic [ref=f1e143] [box=69,2336,72,32]:
+                - img "Linux" [ref=f1e144] [box=82,2346,12,12]
+                - text: Linux
+              - generic [ref=f1e145] [box=149,2336,79,32]:
+                - img "Ubuntu" [ref=f1e146] [box=162,2346,12,12]
+                - text: Ubuntu
+              - generic [ref=f1e147] [box=237,2336,79,32]:
+                - img "CentOS" [ref=f1e148] [box=250,2346,12,12]
+                - text: CentOS
+              - generic [ref=f1e149] [box=69,2376,134,32]:
+                - img "Windows Server" [ref=f1e150] [box=82,2386,12,12]
+                - text: Windows Server
+              - generic [ref=f1e151] [box=211,2376,66,32]:
+                - img "RHEL" [ref=f1e152] [box=224,2386,12,12]
+                - text: RHEL
+              - generic [ref=f1e153] [box=69,2416,79,32]:
+                - img "Debian" [ref=f1e154] [box=82,2426,12,12]
+                - text: Debian
+              - generic [ref=f1e155] [box=156,2416,79,32]:
+                - img "Alpine" [ref=f1e156] [box=169,2426,12,12]
+                - text: Alpine
+          - generic [ref=f1e157] [cursor=pointer] [box=48,2485,297,231]:
+            - heading "// Networking" [level=3] [ref=f1e158] [box=69,2524,255,27]
+            - generic [ref=f1e159] [box=69,2563,255,132]:
+              - generic [ref=f1e160] [box=69,2563,255,24]:
+                - img "TCP/IP" [ref=f1e161] [box=69,2567,16,16]
+                - generic [ref=f1e162] [box=93,2563,45,24]: TCP/IP
+              - generic [ref=f1e163] [box=69,2599,255,24]:
+                - img "DNS" [ref=f1e164] [box=69,2603,16,16]
+                - generic [ref=f1e165] [box=93,2599,30,24]: DNS
+              - generic [ref=f1e166] [box=69,2635,255,24]:
+                - img "Load Balancing" [ref=f1e167] [box=69,2639,16,16]
+                - generic [ref=f1e168] [box=93,2635,114,24]: Load Balancing
+              - generic [ref=f1e169] [box=69,2671,255,24]:
+                - img "Firewall" [ref=f1e170] [box=69,2675,16,16]
+                - generic [ref=f1e171] [box=93,2671,55,24]: Firewall
+          - generic [ref=f1e172] [cursor=pointer] [box=48,2732,297,231]:
+            - heading "// Security" [level=3] [ref=f1e173] [box=69,2771,255,27]
+            - generic [ref=f1e174] [box=69,2810,255,132]:
+              - generic [ref=f1e175] [box=69,2810,255,24]:
+                - img "IAM" [ref=f1e176] [box=69,2814,16,16]
+                - generic [ref=f1e177] [box=93,2810,27,24]: IAM
+              - generic [ref=f1e178] [box=69,2846,255,24]:
+                - img "RBAC" [ref=f1e179] [box=69,2850,16,16]
+                - generic [ref=f1e180] [box=93,2846,40,24]: RBAC
+              - generic [ref=f1e181] [box=69,2882,255,24]:
+                - img "SSL/TLS" [ref=f1e182] [box=69,2886,16,16]
+                - generic [ref=f1e183] [box=93,2882,60,24]: SSL/TLS
+              - generic [ref=f1e184] [box=69,2918,255,24]:
+                - img "Vault" [ref=f1e185] [box=69,2922,16,16]
+                - generic [ref=f1e186] [box=93,2918,38,24]: Vault
+        - generic [ref=f1e187] [cursor=pointer] [box=48,2995,297,351]:
+          - generic [ref=f1e188] [box=69,3016,255,43]: skills --summary
+          - generic [ref=f1e193] [box=69,3059,255,258]:
+            - generic [ref=f1e194] [box=69,3059,255,21]: $ cat /etc/skills/summary.conf
+            - generic [ref=f1e208] [box=69,3088,255,21]: "Total Skills: 35+"
+            - generic [ref=f1e209] [box=69,3117,255,42]: "Primary Cloud: Azure (10+ years)"
+            - generic [ref=f1e210] [box=69,3167,255,42]: "Specialization: Cloud Architecture & DevOps"
+            - generic [ref=f1e211] [box=69,3217,255,21]: "Certifications: 5 Active"
+            - generic [ref=f1e212] [box=69,3246,255,21]: $ echo $STATUS
+            - generic [ref=f1e213] [box=69,3275,255,42]: Ready to architect and deploy production-grade solutions
+  - contentinfo [ref=f1e195] [box=0,3498,393,157]:
+    - generic [ref=f1e196] [box=16,3531,361,92]:
+      - paragraph [ref=f1e197] [box=63,3545,267,21]: © 2026 Abrar Khalish Kamarulzaman
+      - generic [ref=f1e198] [box=151,3596,92,27]:
+        - link [ref=f1e199] [cursor=pointer] [box=151,3596,20,27]:
+          - /url: https://github.com/DarthMandL0R3
+        - link [ref=f1e202] [cursor=pointer] [box=187,3596,20,27]:
+          - /url: https://www.linkedin.com/in/abrarkhalish/
+        - link [ref=f1e205] [cursor=pointer] [box=223,3596,20,27]:
+          - /url: mailto:contact@abrarkhalish.com
