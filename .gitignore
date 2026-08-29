@@ -19,3 +19,4 @@ Thumbs.db
 # Playwright
 .playwright-cli/
 mobile-*.png
+desktop-*.png
