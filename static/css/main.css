@@ -586,6 +586,15 @@ a, button, [role="button"], .card, .tag, .social-link, .project-card, .contact-c
   text-align: left;
   padding: 1rem;
   overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.terminal-content::-webkit-scrollbar {
+  display: none;
+}
+
+.terminal-content {
+  scrollbar-width: none;
 }
 
 .terminal-status-bar {
