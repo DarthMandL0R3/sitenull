@@ -1,4 +1,3 @@
-// Terminal typing animation for homepage
 document.addEventListener('DOMContentLoaded', function() {
     var terminalContent = document.getElementById('terminal-content');
     if (!terminalContent || terminalContent.dataset.started) return;
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
         { type: 'output', text: '10+ years in cloud & infrastructure' }
     ];
     
-    var typing = false;
     var timers = [];
     
     function clearTimers() {
@@ -23,68 +21,97 @@ document.addEventListener('DOMContentLoaded', function() {
         timers = [];
     }
     
-    function createLineEl(line) {
-        var div = document.createElement('div');
-        div.className = 'terminal-line';
-        div.style.opacity = '0';
-        div.style.transform = 'translateY(8px)';
-        div.style.transition = 'opacity 0.25s, transform 0.25s';
+    function typeCommand(div, text, callback) {
+        var cmdSpan = div.querySelector('.terminal-command');
+        if (!cmdSpan) { callback(); return; }
+        var charIdx = 0;
+        cmdSpan.textContent = '';
         
-        if (line.type === 'command') {
-            var p = document.createElement('span');
-            p.className = 'terminal-prompt';
-            p.textContent = '$ ';
-            div.appendChild(p);
-            var c = document.createElement('span');
-            c.className = 'terminal-command';
-            c.textContent = line.text;
-            div.appendChild(c);
-        } else if (line.type === 'output') {
-            var o = document.createElement('span');
-            o.className = 'terminal-output';
-            o.textContent = line.text;
-            div.appendChild(o);
-        } else if (line.type === 'highlight') {
-            var h = document.createElement('span');
-            h.className = 'terminal-highlight';
-            h.textContent = line.text;
-            div.appendChild(h);
-        } else if (line.type === 'badge') {
-            var b = document.createElement('span');
-            b.className = 'status-badge status-online';
-            b.innerHTML = '<span class="status-dot"></span> ' + line.text;
-            div.appendChild(b);
+        function typeChar() {
+            if (charIdx < text.length) {
+                cmdSpan.textContent += text[charIdx];
+                charIdx++;
+                timers.push(setTimeout(typeChar, 30 + Math.random() * 30));
+            } else {
+                timers.push(setTimeout(callback, 300));
+            }
         }
-        return div;
+        typeChar();
+    }
+    
+    function showOutput(div, callback) {
+        timers.push(setTimeout(function() {
+            div.style.opacity = '1';
+            div.style.transform = 'translateY(0)';
+            terminalContent.scrollTop = terminalContent.scrollHeight;
+            timers.push(setTimeout(callback, 400));
+        }, 100));
     }
     
     function runAnimation() {
         clearTimers();
         terminalContent.innerHTML = '';
-        typing = true;
         var idx = 0;
         
         function nextLine() {
-            if (!typing || idx >= lines.length) {
-                typing = false;
+            if (idx >= lines.length) {
                 timers.push(setTimeout(runAnimation, 4000));
                 return;
             }
             
-            var div = createLineEl(lines[idx]);
-            terminalContent.appendChild(div);
-            terminalContent.scrollTop = terminalContent.scrollHeight;
+            var line = lines[idx];
+            var div = document.createElement('div');
+            div.className = 'terminal-line';
+            div.style.opacity = '0';
+            div.style.transform = 'translateY(8px)';
+            div.style.transition = 'opacity 0.25s, transform 0.25s';
             
-            requestAnimationFrame(function() {
+            if (line.type === 'command') {
+                var p = document.createElement('span');
+                p.className = 'terminal-prompt';
+                p.textContent = '$ ';
+                div.appendChild(p);
+                var c = document.createElement('span');
+                c.className = 'terminal-command';
+                div.appendChild(c);
+                terminalContent.appendChild(div);
+                terminalContent.scrollTop = terminalContent.scrollHeight;
+                
                 requestAnimationFrame(function() {
-                    div.style.opacity = '1';
-                    div.style.transform = 'translateY(0)';
+                    requestAnimationFrame(function() {
+                        div.style.opacity = '1';
+                        div.style.transform = 'translateY(0)';
+                    });
                 });
-            });
-            
-            idx++;
-            var delay = lines[idx - 1].type === 'command' ? 800 : 500;
-            timers.push(setTimeout(nextLine, delay));
+                
+                typeCommand(div, line.text, function() {
+                    idx++;
+                    nextLine();
+                });
+            } else {
+                if (line.type === 'output') {
+                    var o = document.createElement('span');
+                    o.className = 'terminal-output';
+                    o.textContent = line.text;
+                    div.appendChild(o);
+                } else if (line.type === 'highlight') {
+                    var h = document.createElement('span');
+                    h.className = 'terminal-highlight';
+                    h.textContent = line.text;
+                    div.appendChild(h);
+                } else if (line.type === 'badge') {
+                    var b = document.createElement('span');
+                    b.className = 'status-badge status-online';
+                    b.innerHTML = '<span class="status-dot"></span> ' + line.text;
+                    div.appendChild(b);
+                }
+                terminalContent.appendChild(div);
+                
+                showOutput(div, function() {
+                    idx++;
+                    nextLine();
+                });
+            }
         }
         
         nextLine();
