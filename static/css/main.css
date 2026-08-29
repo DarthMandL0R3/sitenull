@@ -541,7 +541,7 @@ a, button, [role="button"], .card, .tag, .social-link, .project-card, .contact-c
 
 /* Terminal window */
 .terminal-window {
-  max-width: 36rem;
+  max-width: 42rem;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 0.75rem;
@@ -704,6 +704,12 @@ a, button, [role="button"], .card, .tag, .social-link, .project-card, .contact-c
   background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
 }
 
 .stat-value {
@@ -1037,7 +1043,7 @@ a, button, [role="button"], .card, .tag, .social-link, .project-card, .contact-c
 
 /* Section spacing */
 section {
-  padding: 5rem 2rem;
+  padding: 3.5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
