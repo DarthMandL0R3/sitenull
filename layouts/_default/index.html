@@ -166,6 +166,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const terminalContent = document.getElementById('terminal-content');
     var typingComplete = false;
+    var fallbackRan = false;
     
     const lines = [
         { type: 'command', text: 'whoami' },
@@ -178,16 +179,17 @@ document.addEventListener('DOMContentLoaded', function() {
         { type: 'output', text: '10+ years in cloud & infrastructure' }
     ];
     
-    let lineIndex = 0;
-    let charIndex = 0;
-    let currentSpan = null;
+    var lineIndex = 0;
+    var charIndex = 0;
+    var currentSpan = null;
+    var typeTimer = null;
     
-    function createLine(type) {
-        const lineDiv = document.createElement('div');
+    function createLine(type, textOverride) {
+        var lineDiv = document.createElement('div');
         lineDiv.className = 'terminal-line';
         
         if (type === 'command') {
-            const prompt = document.createElement('span');
+            var prompt = document.createElement('span');
             prompt.className = 'terminal-prompt';
             prompt.textContent = '$ ';
             lineDiv.appendChild(prompt);
@@ -204,9 +206,9 @@ document.addEventListener('DOMContentLoaded', function() {
             currentSpan.className = 'terminal-highlight';
             lineDiv.appendChild(currentSpan);
         } else if (type === 'badge') {
-            const badge = document.createElement('span');
+            var badge = document.createElement('span');
             badge.className = 'status-badge status-online';
-            badge.innerHTML = '<span class="status-dot"></span> ' + lines[lineIndex].text;
+            badge.innerHTML = '<span class="status-dot"></span> ' + (textOverride || lines[lineIndex].text);
             lineDiv.appendChild(badge);
             currentSpan = null;
         }
@@ -214,80 +216,89 @@ document.addEventListener('DOMContentLoaded', function() {
         return lineDiv;
     }
     
+    function renderAllLines() {
+        terminalContent.innerHTML = '';
+        lines.forEach(function(line) {
+            var lineDiv;
+            if (line.type === 'command') {
+                lineDiv = createLine('command');
+                currentSpan.textContent = line.text;
+            } else if (line.type === 'badge') {
+                lineDiv = createLine('badge', line.text);
+            } else {
+                lineDiv = createLine(line.type);
+                currentSpan.textContent = line.text;
+            }
+            terminalContent.appendChild(lineDiv);
+        });
+    }
+    
     function typeLine() {
+        if (typingComplete || fallbackRan) return;
+        
         if (lineIndex >= lines.length) {
             typingComplete = true;
+            // Reloop after 5s
+            setTimeout(function() {
+                typingComplete = false;
+                lineIndex = 0;
+                terminalContent.innerHTML = '';
+                typeLine();
+            }, 5000);
             return;
         }
         
-        const line = lines[lineIndex];
+        var line = lines[lineIndex];
         
         if (line.type === 'badge') {
-            const lineDiv = createLine('badge');
+            var lineDiv = createLine('badge');
             terminalContent.appendChild(lineDiv);
             lineIndex++;
-            setTimeout(typeLine, 800);
+            typeTimer = setTimeout(typeLine, 800);
             return;
         }
         
-        const lineDiv = createLine(line.type);
+        var lineDiv = createLine(line.type);
         terminalContent.appendChild(lineDiv);
         
         charIndex = 0;
-        const text = line.type === 'command' ? line.text.replace(/^\$ /, '') : line.text;
+        var text = line.type === 'command' ? line.text.replace(/^\$ /, '') : line.text;
         
         function typeChar() {
+            if (typingComplete || fallbackRan) return;
             if (charIndex < text.length) {
                 if (currentSpan) {
                     currentSpan.textContent += text[charIndex];
                 }
                 charIndex++;
-                setTimeout(typeChar, 30 + Math.random() * 30);
+                typeTimer = setTimeout(typeChar, 30 + Math.random() * 30);
             } else {
                 lineIndex++;
-                setTimeout(typeLine, 400);
+                typeTimer = setTimeout(typeLine, 400);
             }
         }
         
         typeChar();
     }
     
+    // Start typing after 1s
     setTimeout(typeLine, 1000);
     
     // Fallback: render all lines instantly after 3s if animation hasn't completed
     setTimeout(function() {
-        if (!typingComplete) {
-            terminalContent.innerHTML = '';
-            lines.forEach(function(line) {
-                var lineDiv = document.createElement('div');
-                lineDiv.className = 'terminal-line';
-                if (line.type === 'command') {
-                    var prompt = document.createElement('span');
-                    prompt.className = 'terminal-prompt';
-                    prompt.textContent = '$ ';
-                    lineDiv.appendChild(prompt);
-                    var cmd = document.createElement('span');
-                    cmd.className = 'terminal-command';
-                    cmd.textContent = line.text;
-                    lineDiv.appendChild(cmd);
-                } else if (line.type === 'output') {
-                    var out = document.createElement('span');
-                    out.className = 'terminal-output';
-                    out.textContent = line.text;
-                    lineDiv.appendChild(out);
-                } else if (line.type === 'highlight') {
-                    var hl = document.createElement('span');
-                    hl.className = 'terminal-highlight';
-                    hl.textContent = line.text;
-                    lineDiv.appendChild(hl);
-                } else if (line.type === 'badge') {
-                    var badge = document.createElement('span');
-                    badge.className = 'status-badge status-online';
-                    badge.innerHTML = '<span class="status-dot"></span> ' + line.text;
-                    lineDiv.appendChild(badge);
-                }
-                terminalContent.appendChild(lineDiv);
-            });
+        if (!typingComplete && !fallbackRan) {
+            fallbackRan = true;
+            if (typeTimer) clearTimeout(typeTimer);
+            renderAllLines();
+            
+            // Reloop after 5s
+            setTimeout(function() {
+                fallbackRan = false;
+                typingComplete = false;
+                lineIndex = 0;
+                terminalContent.innerHTML = '';
+                typeLine();
+            }, 5000);
         }
     }, 3000);
 });
