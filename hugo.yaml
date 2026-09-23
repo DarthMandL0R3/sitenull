@@ -10,11 +10,11 @@ build:
 enableEmoji: true
 
 # Disable robots.txt for now
-enableRobotsTXT: false
+enableRobotsTXT: true
 
 # Minify output
 minify:
-  disableXML: true
+  disableXML: false
 
 # Taxonomies
 taxonomies:
